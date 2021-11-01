@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/2021-10-27-welcome/",
+    "title": "Welcome!",
+    "description": "first post",
+    "author": [
+      {
+        "name": "Miriam Patrick",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-27",
+    "categories": [],
+    "contents": "\r\nHello! My name is Miriam Patrick. Thanks for visiting my website. If you have any questions or concerns, please email me! There is a link to my email on the home page!\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-10-27T12:21:43-05:00",
+    "input_file": {}
+  }
+]

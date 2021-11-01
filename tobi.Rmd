@@ -1,0 +1,17 @@
+---
+title: "Tobi Burns"
+image: "tobi.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::jolla
+---
+ 
+I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.

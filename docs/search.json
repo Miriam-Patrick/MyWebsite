@@ -1,0 +1,42 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-28T22:01:39-05:00"
+    },
+    {
+      "path": "blog.html",
+      "title": "Blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-28T22:01:42-05:00"
+    },
+    {
+      "path": "index-delete.html",
+      "title": "mfeo",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-10-28T22:01:45-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Miriam Patrick",
+      "author": [],
+      "contents": "\r\n\r\n          \r\n          \r\n          mfeo\r\n          \r\n          \r\n          Home\r\n          About\r\n          Blog\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Miriam Patrick\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                        LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Twitter\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Email\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Miriam Patrick\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2021-10-28T22:42:06-05:00"
+    },
+    {
+      "path": "tobi.html",
+      "title": "Tobi Burns",
+      "author": [],
+      "contents": "\r\n\r\n          \r\n          \r\n          mfeo\r\n          \r\n          \r\n          Home\r\n          About\r\n          Blog\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Tobi Burns\r\n          \r\n          \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    LinkedIn\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Twitter\r\n                  \r\n                \r\n                                \r\n                  \r\n                    GitHub\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Email\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2021-10-28T22:01:46-05:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

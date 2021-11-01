@@ -1,0 +1,19 @@
+---
+title: "Welcome!"
+description: |
+  first post
+author:
+  - name: Miriam Patrick
+date: 10-27-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Hello! My name is Miriam Patrick. Thanks for visiting my website. If you have any questions or concerns, please email me! There is a link to my email on the home page!
+
