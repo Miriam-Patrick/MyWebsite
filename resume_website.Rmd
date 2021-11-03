@@ -1,0 +1,77 @@
+---
+title: "Resume"
+description: |
+  "Curriculum vitae"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+\begin{center}  
+
+Miriam Patrick  
+
+Richard Adkerson School of Accountancy    
+
+Mississippi State University 
+
+Mp1975@msstate.edu 
+
+(769) 274-8360
+
+\end{center}
+
+----------------
+
+
+## _EDUCATION_  
+#### Mississippi State University--Adkerson School of Accountancy, Starkville, MS  
+* Master of Professional Accountancy- Expected Completion Spring 2022  
+* Bachelor of Accounting-Completed Spring 2021
+
+#### East Central Community College, Decatur, MS
+* Associate in Liberal Arts with Business Concentration-Completed Spring 2019 
+
+Overall GPA: 4.0 
+
+Graduating Senior rank: 1/9438
+
+## _WORK EXPERIENCE_ 
+
+* Library Assistant Summer 2019  
+Forest Public Library  
+Forest, MS 39074 
+
+  + Helped customers access and navigate computers: Internet, Microsoft Word, etc.  
+  + Serviced personally up to 100 customers daily.  
+  + Aided in the set-up 5 summer reading programs  
+  + Helped set up a community "Meet the Candidates" program that over 60 people attended  
+  + Performed transactions on the CMRLS library database.  
+
+* Office Assistant Summer 2017  
+Scott County Solid Waste Office  
+Forest, MS 39074  
+  + Typed over 20 letters concerning solid waste accounts and addresses  
+  + Helped create over 20 new addresses.  
+  + Balanced the cash drawer.  
+  + Serviced personally approx. 50 or more customers daily.  
+  + Recorded approx. 60 payments manually daily.  
+  
+## _HONORS_  
+#### Mississippi State University  
+* SCREP chair of MSU's chapter of National Association of Black Accountants(2021-21)  
+* Graduate Assistant for MSU Adkerson School of Accountancy  
+
+#### East Central Community College  
+* Member of Phi Theta Kappa(2017-19)  
+* Musician for ECCC Gospel Choir  
+
+## _SKILLS_  
+* Proficient in Microsoft Word, Excel, and Powerpoint
+* Familiar with R-Studio, RMarkdown, Tableau, ACL, and IDEA
+
+
+
