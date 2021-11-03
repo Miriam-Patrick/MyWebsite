@@ -6,14 +6,14 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-11-03T11:46:54-05:00"
+      "last_modified": "2021-11-03T11:59:01-05:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-11-03T11:46:56-05:00"
+      "last_modified": "2021-11-03T11:59:03-05:00"
     },
     {
       "path": "index-delete.html",
@@ -21,30 +21,35 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-11-03T11:46:57-05:00"
+      "last_modified": "2021-11-03T11:59:05-05:00"
     },
     {
       "path": "index.html",
       "title": "Miriam Patrick",
       "author": [],
       "contents": "\r\n\r\n          \r\n          \r\n          mfeo\r\n          \r\n          \r\n          Home\r\n          About\r\n          Blog\r\n          Resume\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Miriam Patrick\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                        LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Twitter\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Email\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Miriam Patrick\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
-      "last_modified": "2021-11-03T11:46:58-05:00"
+      "last_modified": "2021-11-03T11:59:10-05:00"
     },
     {
       "path": "resume_website.html",
       "title": "Resume",
       "description": "\"Curriculum vitae\"\n",
-      "author": [],
+      "author": [
+        {
+          "name": "Miriam Patrick",
+          "url": {}
+        }
+      ],
       "date": "`r Sys.Date()`",
-      "contents": "\r\nEDUCATION\r\nMississippi State University–Adkerson School of Accountancy, Starkville, MS\r\nMaster of Professional Accountancy- Expected Completion Spring 2022\r\nBachelor of Accounting-Completed Spring 2021\r\nEast Central Community College, Decatur, MS\r\nAssociate in Liberal Arts with Business Concentration-Completed Spring 2019\r\nOverall GPA: 4.0\r\nGraduating Senior rank: 1/9438\r\nWORK EXPERIENCE\r\nLibrary Assistant Summer 2019\r\nForest Public Library\r\nForest, MS 39074\r\nHelped customers access and navigate computers: Internet, Microsoft Word, etc.\r\nServiced personally up to 100 customers daily.\r\nAided in the set-up 5 summer reading programs\r\nHelped set up a community “Meet the Candidates” program that over 60 people attended\r\nPerformed transactions on the CMRLS library database.\r\n\r\nOffice Assistant Summer 2017\r\nScott County Solid Waste Office\r\nForest, MS 39074\r\nTyped over 20 letters concerning solid waste accounts and addresses\r\nHelped create over 20 new addresses.\r\nBalanced the cash drawer.\r\nServiced personally approx. 50 or more customers daily.\r\nRecorded approx. 60 payments manually daily.\r\n\r\nHONORS\r\nMississippi State University\r\nSCREP chair of MSU’s chapter of National Association of Black Accountants(2021-21)\r\nGraduate Assistant for MSU Adkerson School of Accountancy\r\nEast Central Community College\r\nMember of Phi Theta Kappa(2017-19)\r\nMusician for ECCC Gospel Choir\r\nSKILLS\r\nProficient in Microsoft Word, Excel, and Powerpoint\r\nFamiliar with R-Studio, RMarkdown, Tableau, ACL, and IDEA\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-11-03T11:55:23-05:00"
+      "contents": "\r\nEDUCATION\r\nMississippi State University–Adkerson School of Accountancy, Starkville, MS\r\nMaster of Professional Accountancy- Expected Completion Spring 2022\r\nBachelor of Accounting-Completed Spring 2021\r\nEast Central Community College, Decatur, MS\r\nAssociate in Liberal Arts with Business Concentration-Completed Spring 2019\r\nOverall GPA: 4.0\r\nWORK EXPERIENCE\r\nLibrary Assistant Summer 2019\r\nForest Public Library\r\nForest, MS 39074\r\nHelped customers access and navigate computers: Internet, Microsoft Word, etc.\r\nServiced personally up to 100 customers daily.\r\nAided in the set-up 5 summer reading programs\r\nHelped set up a community “Meet the Candidates” program that over 60 people attended\r\nPerformed transactions on the CMRLS library database.\r\n\r\nOffice Assistant Summer 2017\r\nScott County Solid Waste Office\r\nForest, MS 39074\r\nTyped over 20 letters concerning solid waste accounts and addresses\r\nHelped create over 20 new addresses.\r\nBalanced the cash drawer.\r\nServiced personally approx. 50 or more customers daily.\r\nRecorded approx. 60 payments manually daily.\r\n\r\nHONORS\r\nMississippi State University\r\nSCREP chair of MSU’s chapter of National Association of Black Accountants(2021-21)\r\nGraduate Assistant for MSU Adkerson School of Accountancy\r\nEast Central Community College\r\nMember of Phi Theta Kappa(2017-19)\r\nMusician for ECCC Gospel Choir\r\nSKILLS\r\nProficient in Microsoft Word, Excel, and Powerpoint\r\nFamiliar with R-Studio, RMarkdown, Tableau, ACL, and IDEA\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-11-03T12:16:50-05:00"
     },
     {
       "path": "tobi.html",
       "title": "Tobi Burns",
       "author": [],
       "contents": "\r\n\r\n          \r\n          \r\n          mfeo\r\n          \r\n          \r\n          Home\r\n          About\r\n          Blog\r\n          Resume\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Tobi Burns\r\n          \r\n          \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n            \r\n              I am currently a Graduate Assistant at Mississippi State University in Starkville, MS. I am working on my masters degree in Professional Accountancy with a minor in Data Analytics. I enjoy taking walks in the park and going fishing. I also play the keyboard for church in my spare time.\r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                \r\n                                \r\n                  \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    LinkedIn\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Twitter\r\n                  \r\n                \r\n                                \r\n                  \r\n                    GitHub\r\n                  \r\n                \r\n                                \r\n                  \r\n                    Email\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
-      "last_modified": "2021-11-03T11:47:00-05:00"
+      "last_modified": "2021-11-03T11:59:14-05:00"
     }
   ],
   "collections": ["posts/posts.json"]

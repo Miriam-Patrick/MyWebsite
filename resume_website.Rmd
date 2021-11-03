@@ -2,6 +2,9 @@
 title: "Resume"
 description: |
   "Curriculum vitae"
+author:
+  - name: Miriam Patrick
+    affiliation: Mississippi State Univerisity
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -37,7 +40,6 @@ Mp1975@msstate.edu
 
 Overall GPA: 4.0 
 
-Graduating Senior rank: 1/9438
 
 ## _WORK EXPERIENCE_ 
 
