@@ -184,4 +184,4 @@ plot(perf, main="Lift curve")
 </p>
 
 </details>
-The above plots present the Roc, gain, and lift curves. The diagonal line demonstrates a 50/50 chance of prediction correctly. The roc curve for this model presents a visual that validates that the model performs better than a coin flip.The gain and lift curves do the same. These graphs offer visual support for model performance.
+
