@@ -116,7 +116,7 @@ confusionMatrix(factor(svmtestpred$prediction),factor(svmtestpred$test.preparati
 
 
 
-We analyze the results of this model by viewing the confusion matrix above for predicting test preparation. An accuracy closer to 1 means that the model did well predicting correctly. The accuracy of this model is 0.7519. This means that the model did about 25% better than a coin flip at predicting test preparation. The dataset was unbalanced, but neither up-sampling nor down-sampling helped significantly with making predictions. The kappa for this model is .4297 so when running the model by chance, it performs decently.The model has 67 false negatives and a higher specificity, which is most likely due to the unbalanced dataset.
+We analyze the results of this model by viewing the confusion matrix above for predicting test preparation. An accuracy closer to 1 means that the model did well predicting correctly. The accuracy of this model is 0.7519. This means that the model did about 25% better than a coin flip at predicting test preparation. The dataset was unbalanced, but neither up-sampling nor down-sampling helped significantly with making predictions. The kappa for this model is .4297 so when running the model by chance, it performs decently. The model has 67 false negatives and a higher specificity, which is most likely due to the unbalanced dataset.
 
 <details>
 
