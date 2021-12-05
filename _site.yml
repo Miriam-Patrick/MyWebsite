@@ -9,11 +9,21 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
     - text: "Blog"      # add
       href: blog.html   # add
-    - text: "Resume"      # add
-      href: resume_website.html   # add
+    - text: "About"
+      menu: 
+      - text: "Resume"      # add
+        href: resume_website.html   # add
+        
+    - text: "Projects"      # add
+      menu: 
+      - text: "Rsquared"      # add
+        href: Rsquared.html   # add
+      - text: "KNN"    # add
+        href: KNN.html   # add
+      - text: "Final Project"      # add
+        href: finalproject.html   # add
+    
 output: distill::distill_article
 

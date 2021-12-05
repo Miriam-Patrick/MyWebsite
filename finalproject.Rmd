@@ -1,0 +1,187 @@
+---
+title: "Final Project"
+description: |
+  Predicting test preparation using Support Vector Machines.
+author:
+  - name: Miriam Patrick
+    affiliation: Mississippi State University
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+StudentsPerformance<-read.csv(file= 'StudentsPerformance.csv')
+```
+
+```{r panels, echo=FALSE}
+library(xaringan)
+library(xaringanExtra)
+#lets me use panels
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
+
+### Data Description
+
+The data used in this project presents information about students' grade performance and the variables that may affect it the performance. This information includes descriptive information about the student, their background, and their grades on 3 different exams (math, reading, and writing). The data set comes from the Kaggle dataset search database. The goal of this final project is to predict whether the student studied or not using support vector machines.
+
+```{r, echo=FALSE, include=TRUE}
+psych::describe(StudentsPerformance)
+```
+
+### Descriptive Statistics
+
+The tables above present the descriptive statistics for student performance dataset. Based on skewness, the data of all variables appears to be fairly symmetrical. The variables lunch and test.preparation.course appear to be moderately skewed. There are some low outliers for math, reading, and writing scores, which is reflected by a higher standard error(se).The standard deviation of the math, reading, and writing scores reflects a wider sample spread.
+
+### Support Vector Machines
+Support Vector Machines is the machine learning model used to make predictions in this project. The algorithm is simple, but it can be an effective supervised machine learning approach to making predictions. Support Vector Machines works by using a hyper-plane to the data into distinct categories to make predictions. When establishing the boundaries for the hyper-plane, SVM chooses the hyperplane that creates the most space in between the data being categorized. SVM does this by trial and error, learning, and adjusting until the model optimizes. 
+
+
+```{r, echo=FALSE,results='hide',message=FALSE,warning=FALSE}
+library(caret)
+library(tidyverse)
+#set the seed :)
+set.seed(1)
+#get our samples
+#using the StudentsPerformance data
+#lets split the data 60/40
+trainIndex <- createDataPartition(StudentsPerformance$test.preparation.course, p = .6, list = FALSE, times = 1)
+#look at the first few
+#head(trainIndex)
+#grab the data
+SVMTrain <- StudentsPerformance[ trainIndex,]
+SVMTest  <- StudentsPerformance[-trainIndex,]
+StudentsPerformance_SVM <- train(
+  form = factor(test.preparation.course) ~ .,
+  data = SVMTrain,
+  #here we add classProbs because we want probs
+  trControl = trainControl(method = "cv", number = 10,
+                           classProbs =  TRUE),
+  method = "svmLinear",
+  preProcess = c("center", "scale"),
+  tuneLength = 10)
+StudentsPerformance_SVM
+#summary(StudentsPerformance_SVM)
+svm_Pred<-predict(StudentsPerformance_SVM,SVMTest,type="prob")
+
+svmtestpred<-cbind(svm_Pred,SVMTest)
+svmtestpred<-svmtestpred%>%
+  mutate(prediction=if_else(completed>none,"completed",
+                            if_else(none>completed, "none",
+                                     "PROBLEM")))
+table(svmtestpred$prediction)
+```
+
+<details>
+
+<summary>
+
+#### SVM Demonstration
+</summary>
+
+<p>
+
+```{r}
+supportvectors<-SVMTrain[StudentsPerformance_SVM$finalModel@SVindex,]
+
+ggplot(data=SVMTest, mapping = aes(x=reading.score,y=math.score,color=test.preparation.course))+
+  geom_point(alpha=0.5)+
+  geom_point(data=svmtestpred, mapping = aes(x=reading.score,y=math.score, color=prediction),shape=6,size=3)+
+    geom_point(data=supportvectors, mapping = aes(x=reading.score,y=math.score),shape=4,size=4)+
+  theme(legend.title = element_blank())+ggtitle("SVM Demonstration")
+
+```
+
+
+> SVM Demonstration: The graph demonstrates how support vector machines makes predictions. More importantly, the graph demonstrates how tangled this data is. There is not a distinct separation between the data categories, which will make it harder to make predictions.
+
+</p>
+
+</details>
+
+
+
+### Results
+
+```{r,echo=FALSE,include=TRUE,message=FALSE,warning=FALSE}
+confusionMatrix(factor(svmtestpred$prediction),factor(svmtestpred$test.preparation.course))
+
+
+```
+
+
+
+
+We analyze the results of this model by viewing the confusion matrix above for predicting test preparation. An accuracy closer to 1 means that the model did well predicting correctly. The accuracy of this model is 0.7519. This means that the model did about 25% better than a coin flip at predicting test preparation. The dataset was unbalanced, but neither up-sampling nor down-sampling helped significantly with making predictions. The kappa for this model is .4297 so when running the model by chance, it performs decently.The model has 67 false negatives and a higher specificity, which is most likely due to the unbalanced dataset.
+
+<details>
+
+<summary>
+
+#### ROC, Gain, Lift 
+
+</summary>
+
+<p>
+
+::: panelset
+::: panel
+[Description]{.panel-name}
+
+The support Vector Machines algorithm generates a probabilistic classification. ROC curves, gain charts, and lift charts give users a visual way to compare estimators and analyze the performance of estimators. This is can be helpful for reference purposes. The graphs and descriptions of each are included in the next 3 tabs.
+
+:::
+
+::: panel
+[ROC curve]{.panel-name}
+```{r}
+
+###roc curve
+
+rocobj<-pROC::roc(factor(svmtestpred$test.preparation.course), svmtestpred$completed)
+
+rocobj
+
+plot(rocobj)
+```
+
+> The above plots present the ROC curve. This plot gives a way to visual analyze the performance of the estimators in the model. The diagonal line demonstrates a 50/50 chance of prediction correctly. The roc curve for this model presents a visual that validates that the model performs 25% better than a coin flip. 
+:::
+
+::: panel
+[Gain Chart]{.panel-name}
+
+```{r}
+
+#gain
+pred<-ROCR::prediction(svmtestpred$completed, factor(svmtestpred$test.preparation.course))
+
+gain <- ROCR::performance(pred, "tpr", "rpp")
+
+plot(gain, main = "Gain Chart")
+```
+
+> Gain and lift charts provide a visual description of estimator performance that allows the user to use the information to optimally target specific goals. They can be used to analyze performance and evaluate/compare estimators. The visualization effect is important because a lot of imformation can be communicated in a way that is user friendly.
+:::
+
+::: panel
+[Lift Chart]{.panel-name}
+```{r}
+#lift
+
+perf <- ROCR::performance(pred,"lift","rpp")
+
+plot(perf, main="Lift curve")
+```
+
+:::
+:::
+
+</p>
+
+</details>
+The above plots present the Roc, gain, and lift curves. The diagonal line demonstrates a 50/50 chance of prediction correctly. The roc curve for this model presents a visual that validates that the model performs better than a coin flip.The gain and lift curves do the same. These graphs offer visual support for model performance.

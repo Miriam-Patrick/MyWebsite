@@ -87,29 +87,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>mfeo: About this site</title>
+  <title>mfeo: Rsquared</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the website"/>
+  <meta property="description" itemprop="description" content="An short discussion of a downfall of R-squared"/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-12-05"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-12-05"/>
+  <meta name="article:author" content="Miriam Patrick"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="mfeo: About this site"/>
+  <meta property="og:title" content="mfeo: Rsquared"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the website"/>
+  <meta property="og:description" content="An short discussion of a downfall of R-squared"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="mfeo"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="mfeo: About this site"/>
-  <meta property="twitter:description" content="Some additional details about the website"/>
+  <meta property="twitter:title" content="mfeo: Rsquared"/>
+  <meta property="twitter:description" content="An short discussion of a downfall of R-squared"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About this site"]},{"type":"character","attributes":{},"value":["Some additional details about the website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Rsquared"]},{"type":"character","attributes":{},"value":["An short discussion of a downfall of R-squared\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Miriam Patrick"]},{"type":"character","attributes":{},"value":["Mississippi State University"]}]}]},{"type":"character","attributes":{},"value":["2021-12-05"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2369,7 +2373,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About this site","description":"Some additional details about the website","authors":[]}
+{"title":"Rsquared","description":"An short discussion of a downfall of R-squared","authors":[{"author":"Miriam Patrick","authorURL":"#","affiliation":"Mississippi State University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-12-05T00:00:00.000-06:00","citationText":"Patrick, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2414,15 +2418,54 @@ Projects
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About this site</h1>
+<h1>Rsquared</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the website</p></p>
+<p><p>An short discussion of a downfall of R-squared</p></p>
 </div>
 
+<div class="d-byline">
+  Miriam Patrick  (Mississippi State University)
+  
+<br/>2021-12-05
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>R-squared says nothing about prediction error, even with variance exactly the same, and no change in the coefficients. R-squared can be anywhere between 0 and 1 just by changing the range of X. Because R-squared can be swayed in this way, the results of experiments based on r-squared can be manipulated to support a hypothesis. The manipulation can mislead readers into accepting unsupported hypotheses or conclusions. R-squared does not truly measure goodness of fit. Most people are never think critically of R-squared because it was taught as being a great measure in statistic or another related course. Changing the range of x sequence of numbers such as (1-10) vs (0.1-1) can change R-squared. Knowing this, more critical thinking should be applied to research papers that flaunt a high R-squared.</p>
+<p>To give a visual representation of the issue, r-squared will be presented for two ranges of numbers. The ranges are different by a multiple of 10.</p>
+<blockquote>
+<p>R-squared of first range:</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] 0.9383379</code></pre>
+</div>
+<p>Now we will repeat the code, but this time with the second range of x. Everything else is left the same.</p>
+<blockquote>
+<p>R-squared of second range:</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] 0.1502448</code></pre>
+</div>
+<p>R-squared changes significantly from .9383379 to .1502448 just because of the change in range. This is a drastic change for something that should not have such a significant effect.The metric should reflect the goodness of fit, and goodness of fit should be altered by range.</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>There are several alternatives to R-squared that can act are as better metric. One example would be mean squared error. Mean squared error is the average of the squares of error. Unlike R-squared, MSE is not swayed by range. It measures estimator quality by assessing the error.The smaller the MSE the better.</p>
+<blockquote>
+<p>Mean Squared Error first</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] 0.6468052</code></pre>
+</div>
+<blockquote>
+<p>Mean Squared Error second</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] 0.6468052</code></pre>
+</div>
+<p>As show in the results, we’re better off using Mean Square Error (MSE) as a measure of prediction error.</p>
+<ul>
+<li>Although it is not demonstrated, root mean squared error is another measure that is a good alternative to r-squared.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

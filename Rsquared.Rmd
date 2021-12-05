@@ -1,0 +1,65 @@
+---
+title: "Rsquared"
+description: |
+  An short discussion of a downfall of R-squared
+author:
+  - name: Miriam Patrick 
+    affiliation: Mississippi State University
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+R-squared says nothing about prediction error, even with variance exactly the same, and no change in the coefficients. R-squared can be anywhere between 0 and 1 just by changing the range of X. Because R-squared can be swayed in this way, the results of experiments based on r-squared can be manipulated to support a hypothesis. The manipulation can mislead readers into accepting unsupported hypotheses or conclusions. R-squared does not truly measure goodness of fit. Most people are never think critically of R-squared because it was taught as being a great measure in statistic or another related course. Changing the range of x sequence of numbers such as (1-10) vs (0.1-1) can change R-squared. Knowing this, more critical thinking should be applied to research papers that flaunt a high R-squared.
+
+To give a visual representation of the issue, r-squared will be presented for two ranges of numbers. The ranges are different by a multiple of 10.
+
+> R-squared of first range:
+
+```{r}
+x <- seq(1,10,length.out = 100)
+set.seed(1)
+y <- 2 + 1.2*x + rnorm(100,0,sd = 0.9)
+mod1 <- lm(y ~ x)
+summary(mod1)$r.squared
+```
+
+Now we will repeat the code, but this time with the second range of x. Everything else is left the same.
+
+> R-squared of second range:
+
+```{r}
+# new range of x
+x <- seq(1,2,length.out = 100)      
+set.seed(1)
+y <- 2 + 1.2*x + rnorm(100,0,sd = 0.9)
+mod1 <- lm(y ~ x)
+summary(mod1)$r.squared
+```
+
+R-squared changes significantly from .9383379 to .1502448 just because of the change in range. This is a drastic change for something that should not have such a significant effect.The metric should reflect the goodness of fit, and goodness of fit should be altered by range.
+
+### Alternatives
+
+There are several alternatives to R-squared that can act are as better metric. One example would be mean squared error. Mean squared error is the average of the squares of error. Unlike R-squared, MSE is not swayed by range. It measures estimator quality by assessing the error.The smaller the MSE the better.
+
+> Mean Squared Error first
+
+```{r}
+# Mean squared error
+sum((fitted(mod1) - y)^2)/100
+```
+
+> Mean Squared Error second
+
+```{r}
+# Mean squared error
+sum((fitted(mod1) - y)^2)/100       
+```
+
+As show in the results, we're better off using Mean Square Error (MSE) as a measure of prediction error.
+
+-   Although it is not demonstrated, root mean squared error is another measure that is a good alternative to r-squared.

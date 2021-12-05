@@ -1,0 +1,107 @@
+---
+title: "KNN"
+description: |
+  Explanation of K-nearest neighbor
+author:
+  - name: Miriam Patrick 
+    affiliation: Mississippi State University
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r, echo=FALSE,results='hide'}
+iris<-iris
+```
+
+### **KNN Model Description**
+
+K-nearest Neighbor is a Machine Learning model that makes predictions based on the classification of the data points nearest to the data point being predicted. For example, the prediction of gender would be based on the gender of the points nearest to the point being used for prediction. The model assumes that points of similar values share similar characteristics and uses this assumption to make predictions. The area determined to be "nearest" is adjusted through trial and error until the model maximizes the number of correct predictions. The graph below helps provide a demonstration of this concept.
+
+```{r, echo= FALSE, results='hide'}
+library(caret)
+library(tidyverse)
+set.seed(1)
+
+indxTrain <- createDataPartition(y = iris[, names(iris) == "Species"], p = 0.6, list = F)
+
+train <- iris[indxTrain,]
+
+train1<-train%>%
+  filter(Species=="setosa")%>% 
+  sample_n(10)
+train2<-train%>%
+  filter(Species=="versicolor")%>% 
+  sample_n(10)
+train3<-train%>%
+  filter(Species=="virginica")%>% 
+  sample_n(10)
+graph_train<-rbind(train1,train2,train3)
+
+test <- iris[-indxTrain,]
+
+graph_test<-test%>%
+  sample_n(1)
+```
+
+```{r, echo=FALSE, include=TRUE}
+library(ggplot2)
+ggplot(data=graph_train,mapping = aes(x=Petal.Length,y=Petal.Width,color=Species))+geom_point(alpha=0.5) + 
+   geom_point(data=graph_test, color="darkred", size=4) + theme(legend.title = element_blank())+ggtitle("Which are the closest 5 to the red dot?")+xlim(4.5,6)+ylim(1.5,2.5)+
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold'))
+
+```
+
+> The graph demonstrates how the model uses points within proximity to make predictions for target variables. Based on the knn model, the red dot will be classified as Virginica because the closest surrounding dots are classified as Viriginica.
+
+### **Process**
+
+```{r, echo= TRUE, results='hide'}
+    #set the seed :)
+    set.seed(1)
+    #lets split the data 60/40
+    library(caret)
+    trainIndex.6 <- createDataPartition(iris$Species, p = .6, list = FALSE, times = 1)
+
+    #grab the data
+    irisTrain.6 <- iris[ trainIndex.6,]
+    irisTest.6  <- iris[-trainIndex.6,]
+
+
+    preProcValues.6 <- preProcess(irisTrain.6, method = c("center", "scale"))
+
+    trainTransformed.6 <- predict(preProcValues.6, irisTrain.6)
+
+    preProcValues.6 <- preProcess(irisTest.6, method = c("center", "scale"))
+    testTransformed.6 <- predict(preProcValues.6, irisTest.6)
+
+    #fit knn
+    knn_fit.6<-train(Species~.,
+                   data=trainTransformed.6,
+                   method="knn",
+                   tuneGrid=data.frame(k=5))
+
+    knn_fit.6
+
+
+    #predict on the test set
+    knn_pred.6<-predict(knn_fit.6,testTransformed.6)
+
+    #confusion matrix
+    confusionMatrix(knn_pred.6,testTransformed.6$Species)
+
+```
+
+The process of running this model includes partitioning the iris data into a training and a testing set. The knn model uses the training set to learn the tendencies of the data and establish boundaries for making flower species predictions. The data is then scaled and centered to help the algorithm function properly by normalizing the data. The model is run on the training data to allow the algorithm to optimize itself, and the predictions are made based on the parameters that yield the best results.
+
+### **Results**
+
+```{r, echo= FALSE}
+    #predict on the test set
+    knn_pred.6<-predict(knn_fit.6,testTransformed.6)
+
+    #confusion
+    confusionMatrix(knn_pred.6,testTransformed.6$Species)
+
+```
+
+We can analyze the results of this model by viewing the confusion matrix above for predicting flower species. Accuracy is a measure that evaluates the model's performance by dividing the number of correct predictions by the total predictions. An accuracy closer to 1 means that the model did well predicting correctly. The accuracy of this model is 0.95. The model incorrectly predicted 3 out of 60 predictions, which is good. The kappa for this model is .925, so when running the model by chance, it performs well.
