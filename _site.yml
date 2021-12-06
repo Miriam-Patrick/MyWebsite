@@ -1,7 +1,7 @@
 name: "."
-title: "mfeo"
+title: "Miriam Patrick"
 description: |
-  mfeo
+  Miriam Patrick
 output_dir: "docs"
 theme: postcards.css
 navbar:
